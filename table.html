@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tables</title>
+</head>
+
+<body>
+    <!-- Transliteration Table -->
+    
+    <table align="left" class="col-tables">
+        <tr>
+            <td>
+                <p class="trans-col-header">Independent Vowels</p>
+                <table id="vowelsTable">
+                    <!-- Vowels table content will be generated here -->
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <table align="left" class="col-tables">
+        <tr>
+            <td>
+                <p class="trans-col-header">Common Consonants</p>
+                <table id="consonantsTable">
+                    <!-- Common consonants table content will be generated here -->
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <table align="left" class="col-tables">
+        <tr>
+            <td>
+                <p class="trans-col-header">Rare Consonants</p>
+                <table id="rareConsonantsTable">
+                    <!-- Rare consonants table content will be generated here -->
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <table align="left" class="col-tables">
+        <tr>
+            <td>
+                <p class="trans-col-header">Vocalic Signs (Diacritics)</p>
+                <table id="vocalicSignsTable">
+                    <!-- Vocalic signs table content will be generated here -->
+                </table>
+                <div class="trans-special-cnt">
+                    <p class="trans-col-header">Special</p>
+                    <table>
+                        <tr>
+                            <td style="width:20%;">&nbsp; /‍</td>
+                            <td>Letter separator (e.g., n/y/j &rarr; න්ය්ජ්)</td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <table align="left" class="col-tables">
+        <tr>
+            <td>
+                <p class="trans-col-header">Diacritics (rakaransaya / yansaya)</p>
+                <table id="diacriticsTable">
+                    <!-- Diacritics table content will be generated here -->
+                </table>
+                <!-- <div class="trans-special-cnt">
+                    <p class="trans-col-header">Special</p>
+                    <table id="specialTable"> -->
+                        <!-- Special table content will be generated here -->
+                   <!--  </table>
+                </div> -->
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        // Data for the tables (you can replace this with your data)
+
+        // Data for the Vowels table
+        var vowelData = [
+            ["අ", "a"],
+            ["ආ", "aa"],
+            ["ඇ", "A"],
+            ["ඈ", "AA, ae"],
+            ["ඉ", "i"],
+            ["ඊ", "ii, ee, ie"],
+            ["උ", "u"],
+            ["ඌ", "uu"],
+            ["එ", "e"],
+            ["ඒ", "ee, ei"],
+            ["ඔ", "o"],
+            ["ඕ", "oo"],
+            ["ඖ", "au"],
+            ["ඓ", "ai"],
+            ["ළු", "Lu"],
+            ["ළූ", "Luu"],
+            ["ඏ", "LU"],
+            ["ඐ", "LUU"],
+            ["ඍ", "RU"],
+            ["ඎ", "RUU"]
+        ];
+
+        // Data for the Common Consonants table
+        var consonantData = [
+            ["ක", "k, c"],
+            ["ග", "g"],
+            ["ච", "ch"],
+            ["ජ", "j"],
+            ["ට", "t"],
+            ["ඩ", "d"],
+            ["ණ", "N"],
+            ["ත", "th"],
+            ["ද", "dh"],
+            ["න", "n"],
+            ["ප", "p"],
+            ["බ", "b"],
+            ["ම", "m"],
+            ["ය", "y"],
+            ["ර", "r"],
+            ["ල", "l"],
+            ["ව", "v, w"],
+            ["ස", "s"],
+            ["හ", "h"],
+            ["ළ", "L"],
+            ["&nbsp;", "&nbsp;"]  // Empty row
+        ];
+
+        // Data for the Rare Consonants table
+        var rareConsonantData = [
+            ["ඛ", "kh"],
+            ["ඝ", "gh"],
+            ["ඞ", "NG"],
+            ["ඟ", "ng"],
+            ["ඡ", "CH"],
+            ["ඣ", "J"],
+            ["ඤ", "ny"],
+            ["ඥ", "jny"],
+            ["ඦ", "nyj"],
+            ["ඨ", "T"],
+            ["ඪ", "D"],
+            ["ඬ", "ND"],
+            ["ථ", "TH"],
+            ["ධ", "DH"],
+            ["ඳ", "NDH"],
+            ["ඵ", "P"],
+            ["භ", "bh"],
+            ["ඹ", "B"],
+            ["ශ", "sh"],
+            ["ෂ", "SH"],
+            ["ෆ", "f"]
+        ];
+
+        // Data for the Vocalic Signs (Diacritics) table
+        var vocalicSignsData = [
+            ["ක", "k<span>a</span>"],
+            ["ක්", "k"],
+            ["කා", "k<span>aa</span>"],
+            ["කැ", "k<span>A</span>"],
+            ["කෑ", "k<span>AA</span>, k<span>ae</span>"],
+            ["කි", "k<span>i</span>"],
+            ["කී", "k<span>ii</span>, k<span>ee</span>, k<span>ie</span>"],
+            ["කු", "k<span>u</span>"],
+            ["කූ", "k<span>uu</span>"],
+            ["කෙ", "k<span>e</span>"],
+            ["කේ", "k<span>ei</span>"],
+            ["කො", "k<span>o</span>"],
+            ["කෝ", "k<span>oo</span>"],
+            ["කෛ", "k<span>ai</span>"],
+            ["කෞ", "k<span>au</span>"],
+            ["කං", "k<span>'ng</span>"],
+            ["කඃ", "k<span>'nng</span>"],
+            ["කර්‍‍", "k<span>R</span>"],
+            ["කෟ", "k<span>'L</span>"],
+            ["කෳ", "k<span>'LL</span>"],
+            ["&nbsp;", "&nbsp;"]
+        ];
+
+        // Data for the Diacritics (rakaransaya / yansaya) table
+        var diacriticsData = [
+            ["ක්‍ර / ක්‍ය", "k<span>ra</span> / k<span>Ya</span>"],
+            ["ක්‍රා / ක්‍යා", "k<span>raa</span> / k<span>Yaa</span>"],
+            ["ක්‍රැ / ක්‍යැ", "k<span>rA</span> / k<span>YA</span>"],
+            ["ක්‍රෑ&nbsp; / ක්‍යෑ", "k<span>rAA</span> / k<span>YAA</span>"],
+            ["ක්‍රි&nbsp; / ක්‍යි", "k<span>ri</span> / k<span>Yi</span>"],
+            ["ක්‍රී&nbsp; / ක්‍යී", "k<span>rii</span> / k<span>Yii</span>"],
+            ["කෘ / ක්‍යු", "k<span>ru</span> / k<span>Yu</span>"],
+            ["කෲ / ක්‍යූ", "k<span>ruu</span> / k<span>Yuu</span>"],
+            ["ක්‍රෙ / ක්‍යෙ", "k<span>re</span> / k<span>Ye</span>"],
+            ["ක්‍රේ / ක්‍යේ", "k<span>rei</span> / k<span>Yei</span>"],
+            ["ක්‍රො / ක්‍යො", "k<span>ro</span> / k<span>Yo</span>"],
+            ["ක්‍රෝ /ක්‍යෝ", "k<span>roo</span> / k<span>Yoo</span>"],
+            ["ක්‍රං / ක්‍යං", "k<span>r'ng</span> / k<span>Y'ng</span>"],
+            ["ක්‍යර්‍‍", "k<span>YR</span>"]
+        ];
+
+        // Data for the Special table
+        // var specialData = [
+        //     // ... (your data here)
+        // ];
+
+        // Function to create a table from data
+        function createTable(data, tableId) {
+            var table = document.getElementById(tableId);
+
+            for (var i = 0; i < data.length; i++) {
+                var row = table.insertRow(i);
+                for (var j = 0; j < data[i].length; j++) {
+                    var cell = row.insertCell(j);
+                    cell.innerHTML = data[i][j];
+                }
+            }
+        }
+
+        // Create the tables
+        createTable(vowelData, "vowelsTable");
+        createTable(consonantData, "consonantsTable");
+        createTable(rareConsonantData, "rareConsonantsTable");
+        createTable(vocalicSignsData, "vocalicSignsTable");
+        createTable(diacriticsData, "diacriticsTable");
+        // createTable(specialData, "specialTable");
+    </script>
+</body>
+
+</html>

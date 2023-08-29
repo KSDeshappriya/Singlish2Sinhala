@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en" xml:lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <title>Sinhala Transliteration (Singlish to Sinhala) converter</title>
+    <meta name="title" content="Sinhala Transliteration (Singlish to Sinhala) converter | t30apps.com" />
+    <meta name="keywords"
+        content="Sinhala transliteration, Singlish to Sinhala, Sinhala converter, typing in Sinhala, Sinhala transliterate converter, type Sinhala" />
+    <meta name="description"
+        content="Sinhala Transliteration (Singlish to Sinhala) Converter is an app that converts text typed in English letters to their equivalent 
+letters in Sinhala (i.e. Singlish to Sinhala converter).  The Singlish to Sinhala conversion can be done in real time as you type or can be pasted from the 
+clipboard to the allotted textarea. Those who are proficient in typing with English keyboards should be able type in Sinhala quite fast with the app." />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="style/app-list-style.css" rel="stylesheet" type="text/css" />
+    <script src="script4.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+
+    <div id="outer_wrapper">
+
+        <table id="txt_cnts">
+
+            <tr>
+                <td>
+                    <table align="left" class="segment-table textarea-cnt">
+                        <tr>
+                            <td>
+                                <p class="textarea-title">Singlish</p>
+                                <textarea autofocus="true" id="typtext" onclick="txtselclk()"
+                                    onkeydown="" onkeyup="conv(); txtselclk();"
+                                    placeholder="Type in Singlish here"></textarea><br />
+                            </td>
+                        </tr>
+                    </table>
+                    <table align="left" class="segment-table textarea-cnt">
+                        <tr>
+                            <td>
+                                <p class="textarea-title">Sinhala</p>
+                                <textarea id="convtext"></textarea>
+                            </td>
+                        </tr>
+                    </table>
+                    <table align="left" id="trans_cntTable" class="segment-table">
+                        <tr>
+                            <td>
+                                <div class="trans-cnt">
+                                    <p class="trans-header">Transliteration Table</p>
+
+                                    <!-- Transliteration Table -->
+
+                                    <table align="left" class="col-tables">
+                                        <tr>
+                                            <td>
+                                                <p class="trans-col-header">Independent Vowels</p>
+                                                <table>
+                                                    <tr>
+                                                        <td>අ</td>
+                                                        <td>a</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ආ</td>
+                                                        <td>aa</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ඇ</td>
+                                                        <td>A</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ඈ</td>
+                                                        <td>AA, ae</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ඉ</td>
+                                                        <td>i</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ඊ</td>
+                                                        <td>ii, ee, ie</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>උ</td>
+                                                        <td>u</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ඌ</td>
+                                                        <td>uu</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>එ</td>
+                                                        <td>e</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ඒ</td>
+                                                        <td>ee, ei</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ඔ</td>
+                                                        <td>o</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ඕ</td>
+                                                        <td>oo</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ඖ</td>
+                                                        <td>au</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ඓ</td>
+                                                        <td>ai</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ළු</td>
+                                                        <td>Lu</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ළූ</td>
+                                                        <td>Luu</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ඏ</td>
+                                                        <td>LU</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ඐ</td>
+                                                        <td>LUU</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ඍ</td>
+                                                        <td>RU</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ඎ</td>
+                                                        <td>RUU</td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                    <table align="left" class="col-tables">
+                                        <tr>
+                                            <td>
+                                                <p class="trans-col-header">Common Consonants</p>
+                                                <table>
+                                                    <tr>
+                                                        <td>ක</td>
+                                                        <td>k, c</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ග</td>
+                                                        <td>g</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ච</td>
+                                                        <td>ch</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ජ</td>
+                                                        <td>j</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ට</td>
+                                                        <td>t</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ඩ</td>
+                                                        <td>d</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ණ</td>
+                                                        <td>N</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ත</td>
+                                                        <td>th</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ද</td>
+                                                        <td>dh</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>න</td>
+                                                        <td>n</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ප</td>
+                                                        <td style="width: 70px;">p</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>බ</td>
+                                                        <td>b</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ම</td>
+                                                        <td>m</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ය</td>
+                                                        <td>y</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ර</td>
+                                                        <td>r</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ල</td>
+                                                        <td>l</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ව</td>
+                                                        <td>v, w</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ස</td>
+                                                        <td>s</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>හ</td>
+                                                        <td>h</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ළ</td>
+                                                        <td>L</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>&nbsp;</td>
+                                                        <td>&nbsp;</td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                    <table align="left" class="col-tables">
+                                        <tr>
+                                            <td>
+                                                <p class="trans-col-header">Rare Consonants</p>
+                                                <table>
+                                                    <tr>
+                                                        <td>ඛ</td>
+                                                        <td>kh</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ඝ</td>
+                                                        <td>gh</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ඞ</td>
+                                                        <td>NG</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ඟ</td>
+                                                        <td>ng</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ඡ</td>
+                                                        <td>CH</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ඣ</td>
+                                                        <td>J</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ඤ</td>
+                                                        <td>ny</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ඥ</td>
+                                                        <td>jny</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ඦ</td>
+                                                        <td>nyj</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ඨ</td>
+                                                        <td>T</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ඪ</td>
+                                                        <td>D</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ඬ</td>
+                                                        <td>ND</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ථ</td>
+                                                        <td>TH</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ධ</td>
+                                                        <td>DH</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ඳ</td>
+                                                        <td>NDH</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ඵ</td>
+                                                        <td>P</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>භ</td>
+                                                        <td>bh</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ඹ</td>
+                                                        <td>B</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ශ</td>
+                                                        <td>sh</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ෂ</td>
+                                                        <td>SH</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ෆ</td>
+                                                        <td>f</td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                    <table align="left" class="col-tables">
+                                        <tr>
+                                            <td>
+                                                <p class="trans-col-header">Vocalic Signs (Diacritics)</p>
+                                                <table>
+                                                    <tr>
+                                                        <td>ක</td>
+                                                        <td><span>k</span><span>a</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ක්</td>
+                                                        <td><span>k</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>කා</td>
+                                                        <td><span>k</span><span>aa</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>කැ</td>
+                                                        <td><span>k</span><span>A</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>කෑ</td>
+                                                        <td><span>k</span><span>AA</span>, <span>k</span><span>ae</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>කි</td>
+                                                        <td><span>k</span><span>i</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>කී</td>
+                                                        <td><span>k</span><span>ii</span>,
+                                                            <span>k</span><span>ee</span>, <span>k</span><span>ie</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>කු</td>
+                                                        <td><span>k</span><span>u</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="height: 23px; width: 78px;">කූ</td>
+                                                        <td><span>k</span><span>uu</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>කෙ</td>
+                                                        <td><span>k</span><span>e</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>කේ</td>
+                                                        <td><span>k</span><span>ei</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>කො</td>
+                                                        <td><span>k</span><span>o</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>කෝ</td>
+                                                        <td><span>k</span><span>oo</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>කෛ</td>
+                                                        <td><span>k</span><span>ai</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>කෞ</td>
+                                                        <td><span>k</span><span>au</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>කං</td>
+                                                        <td><span>k</span><span>'ng</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>කඃ</td>
+                                                        <td><span>k</span><span>'nng</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>කර්‍‍</td>
+                                                        <td><span>k</span><span>R</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>කෟ</td>
+                                                        <td><span>k</span><span>'L</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>කෳ</td>
+                                                        <td><span>k</span><span>'LL</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>&nbsp; </td>
+                                                        <td>&nbsp; </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                    <table align="left" class="col-tables">
+                                        <tr>
+                                            <td>
+                                                <p class="trans-col-header">Diacritics (rakaransaya / yansaya)</p>
+                                                <table>
+                                                    <tr>
+                                                        <td>ක්‍ර / ක්‍ය</td>
+                                                        <td><span>k</span><span>ra</span> /
+                                                            <span>k</span><span>Ya</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ක්‍රා / ක්‍යා</td>
+                                                        <td><span>k</span><span>raa</span> /
+                                                            <span>k</span><span>Yaa</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ක්‍රැ / ක්‍යැ</td>
+                                                        <td><span>k</span><span>rA</span> /
+                                                            <span>k</span><span>YA</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ක්‍රෑ&nbsp; / ක්‍යෑ</td>
+                                                        <td><span>k</span><span>rAA</span> /
+                                                            <span>k</span><span>YAA</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ක්‍රි&nbsp; / ක්‍යි</td>
+                                                        <td><span>k</span><span>ri</span> /
+                                                            <span>k</span><span>Yi</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ක්‍රී&nbsp; / ක්‍යී</td>
+                                                        <td><span>k</span><span>rii</span> /
+                                                            <span>k</span><span>Yii</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>කෘ / ක්‍යු</td>
+                                                        <td><span>k</span><span>ru</span> /
+                                                            <span>k</span><span>Yu</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>කෲ / ක්‍යූ</td>
+                                                        <td><span>k</span><span>ruu</span> /
+                                                            <span>k</span><span>Yuu</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ක්‍රෙ / ක්‍යෙ</td>
+                                                        <td><span>k</span><span>re</span> /
+                                                            <span>k</span><span>Ye</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ක්‍රේ / ක්‍යේ</td>
+                                                        <td><span>k</span><span>rei</span> /
+                                                            <span>k</span><span>Yei</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ක්‍රො / ක්‍යො</td>
+                                                        <td><span>k</span><span>ro</span> /
+                                                            <span>k</span><span>Yo</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ක්‍රෝ /ක්‍යෝ</td>
+                                                        <td><span>k</span><span>roo</span> /
+                                                            <span>k</span><span>Yoo</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ක්‍රං / ක්‍යං</td>
+                                                        <td><span>k</span><span>r'ng</span> /
+                                                            <span>k</span><span>Y'ng</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ක්‍යර්‍‍</td>
+                                                        <td><span>k</span><span>YR</span></td>
+                                                    </tr>
+                                                </table>
+                                                <div class="trans-special-cnt">
+                                                    <p class="trans-col-header">Special</p>
+                                                    <table>
+                                                        <tr>
+                                                            <td style="width:20%;">&nbsp; /‍</td>
+                                                            <td>Letter separator (e.g. n/y/j &rarr; න්ය්ජ්)</td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                </div>
+
+                            </td>
+
+                        </tr>
+                    </table>
+
+
+                </td>
+            </tr>
+
+        </table>
+
+    </div>
+
+</body>
+
+</html>
